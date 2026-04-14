@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548815050791",
+    "project_id": "dr-consult1",
+    "storage_bucket": "dr-consult1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548815050791:android:8b79a21a74c1915fea5602",
+        "android_client_info": {
+          "package_name": "com.example.drconsult"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZoGASrMQFnerJKDl-LW5GRjhKOfMz3H0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

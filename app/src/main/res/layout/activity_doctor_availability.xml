@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_availability"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Set My Availability"
+        app:titleCentered="true" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Info Banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#E8F4FD"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp"
+                    android:text="Set your weekly working hours. Patients will only be able to book appointments on the days and times you select. Slots are generated every 30 minutes."
+                    android:textColor="@color/primary_blue"
+                    android:textSize="13sp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MONDAY checkbox + pickers built inline for direct ID binding -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <CheckBox
+                        android:id="@+id/cb_monday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:buttonTint="@color/primary_blue"/>
+
+                    <LinearLayout
+                        android:id="@+id/layout_monday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_monday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_monday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── TUESDAY ── -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_tuesday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tuesday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_tuesday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_tuesday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_tuesday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── WEDNESDAY ── -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_wednesday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wednesday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_wednesday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_wednesday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_wednesday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── THURSDAY ── -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_thursday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thursday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_thursday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_thursday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_thursday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── FRIDAY ── -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_friday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Friday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_friday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_friday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_friday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── SATURDAY ── -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_saturday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Saturday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_saturday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_saturday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_saturday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── SUNDAY ── -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="24dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <CheckBox android:id="@+id/cb_sunday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sunday" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/dark_text" android:buttonTint="@color/primary_blue"/>
+                    <LinearLayout android:id="@+id/layout_sunday" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_sunday_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End" android:textColor="@color/light_text" android:textSize="12sp"/>
+                            <TimePicker android:id="@+id/tp_sunday_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Progress + Save -->
+            <ProgressBar
+                android:id="@+id/progress_availability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_availability"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Save Availability"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primary_blue"
+                app:cornerRadius="14dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

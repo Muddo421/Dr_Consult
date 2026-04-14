@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- App Branding -->
+    <color name="primary_blue">#094DA2</color>
+    <color name="light_blue_card">#4A90E2</color>
+    <color name="light_grey_background">#F5F5F5</color>
+
+    <!-- Text Colors -->
+    <color name="dark_text">#333333</color>
+    <color name="light_text">#757575</color>
+
+    <!-- Chips & Categories -->
+    <color name="chip_pink">#FFE5E5</color>
+    <color name="chip_blue">#E5F4FF</color>
+    <color name="chip_green">#E5FFF0</color>
+    <color name="pink_text">#FF6B6B</color>
+    <color name="blue_text">#4A90E2</color>
+    <color name="green_text">#2ECC71</color>
+
+    <!-- MISSING COLORS (Fixes your theme error) -->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="accent_blue">#4472C4</color>
+    <color name="primaryDark">#1F2937</color>
+
+</resources>

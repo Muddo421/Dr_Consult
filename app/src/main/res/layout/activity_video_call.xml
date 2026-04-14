@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- ✅ Remote video — full screen background, solid color so video is visible -->
+    <FrameLayout
+        android:id="@+id/remote_video_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#1A1A1A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Status text shown while waiting or disconnected -->
+    <TextView
+        android:id="@+id/tv_call_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecting..."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ✅ Local video — top right corner, fixed size with solid background -->
+    <FrameLayout
+        android:id="@+id/local_video_container"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_margin="16dp"
+        android:background="#333333"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Caller/Doctor name top left -->
+    <TextView
+        android:id="@+id/tv_call_doctor_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Dr. Name"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/local_video_container"/>
+
+    <!-- Bottom controls bar -->
+    <LinearLayout
+        android:id="@+id/call_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="48dp"
+        android:background="#AA000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Mute -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="32dp">
+
+            <ImageButton
+                android:id="@+id/btn_mute"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/search_bar_background"
+                android:src="@android:drawable/ic_lock_silent_mode_off"
+                android:padding="14dp"
+                android:contentDescription="Mute"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mute"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+        <!-- End Call (red, center) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="32dp">
+
+            <ImageButton
+                android:id="@+id/btn_end_call"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:backgroundTint="#DC2626"
+                android:background="@drawable/search_bar_background"
+                android:src="@drawable/ic_videocam"
+                android:padding="16dp"
+                android:contentDescription="End Call"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Call"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+        <!-- Camera toggle -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_video"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/search_bar_background"
+                android:src="@android:drawable/ic_menu_camera"
+                android:padding="14dp"
+                android:contentDescription="Toggle Camera"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

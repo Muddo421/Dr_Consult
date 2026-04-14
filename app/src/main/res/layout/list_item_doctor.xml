@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Dr. Michael Johnson"
+            android:textColor="@color/dark_text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/doctor_price"/>
+
+        <TextView
+            android:id="@+id/doctor_specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Cardiologist"
+            android:textColor="@color/light_text"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doctor_name" />
+
+        <TextView
+            android:id="@+id/doctor_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$8"
+            android:textColor="@color/primary_blue"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doctor_specialty"
+            app:tint="@color/light_text" />
+
+        <TextView
+            android:id="@+id/doctor_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="4.9"
+            android:textColor="@color/light_text"
+            app:layout_constraintBottom_toBottomOf="@id/star_icon"
+            app:layout_constraintStart_toEndOf="@id/star_icon"
+            app:layout_constraintTop_toTopOf="@id/star_icon" />
+
+        <ImageView
+            android:id="@+id/clock_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_schedule"
+            app:layout_constraintBottom_toBottomOf="@id/star_icon"
+            app:layout_constraintStart_toEndOf="@id/doctor_rating"
+            app:layout_constraintTop_toTopOf="@id/star_icon"
+            app:tint="@color/light_text" />
+
+        <TextView
+            android:id="@+id/doctor_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="10 years exp"
+            android:textColor="@color/light_text"
+            app:layout_constraintBottom_toBottomOf="@id/clock_icon"
+            app:layout_constraintStart_toEndOf="@id/clock_icon"
+            app:layout_constraintTop_toTopOf="@id/clock_icon" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/book_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doctor_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
